@@ -1,0 +1,340 @@
+/*PAGE WRAPPER*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f7fb;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/*FORM CONTAINER*/
+.form {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ⭐ two columns */
+  gap: 20px;
+}
+
+/*LABEL + FIELD*/
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+/*INPUTS*/
+.form input,
+.form textarea,
+.form select {
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+/* focus effect */
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 3px rgba(79, 70, 229, 0.4);
+}
+
+/* textarea full width */
+.form textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+/* Checkbox alignment */
+.form input[type="checkbox"] {
+  width: auto;
+  margin-top: 10px;
+}
+
+/*Button full row*/
+.form button {
+  grid-column: span 2; /* ⭐ button takes full row */
+  padding: 12px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background-color: #3730a3;
+}
+
+/*TODO LIST*/
+.todo-list {
+  /* max-width: 800px; */
+  margin: 30px auto;
+}
+
+/* card */
+.todo-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+/* delete button */
+.todo-card button {
+  margin-top: 10px;
+  background: crimson;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-card button:hover {
+  background: darkred;
+}
+
+/* Container spacing */
+.todo-table {
+  /* width: 100%; */
+  /* max-width: 800px;
+  min-width: 800px; */
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.todo-table thead {
+  background-color: #1e293b;
+  color: white;
+}
+
+.todo-table th {
+  padding: 12px;
+  text-align: left;
+}
+
+/* Rows */
+.todo-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Zebra effect */
+.todo-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Hover effect */
+.todo-table tbody tr:hover {
+  background-color: #e2e8f0;
+  transition: 0.2s;
+}
+
+/* Buttons */
+.todo-table button {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Edit button */
+.edit-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* Button hover */
+.todo-table button:hover {
+  opacity: 0.8;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+/* checked state */
+.switch input:checked + .slider {
+  background-color: #4f46e5;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.table-container {
+  /* width: 800px; */
+  width: 100%;
+  max-width: 800px;
+  margin: 25px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.header-table {
+  width: 100%;
+  table-layout: fixed;
+  background: #1e293b;
+  color: white;
+}
+.header-table th {
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+}
+.table-body-scroll {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.body-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.body-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+/* zebra rows */
+.body-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* hover */
+.body-table tr:hover {
+  background: #eef2ff;
+}
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.badge.low {
+  background: #dcfce7;
+  color: #166534;
+}
+.badge.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.table-body-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-body-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background: black;
+  color: white;
+}
+
+/*Responsive*/
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .form button {
+    grid-column: span 1;
+  }
+}
